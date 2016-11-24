@@ -11,16 +11,65 @@ import maya.OpenMayaUI as omui
 try:
     from PySide import QtGui, QtCore
     import PySide.QtGui as QtWidgets
+    from PySide.QtGui import QSizePolicy
+    from PySide.QtGui import QGroupBox
+    from PySide.QtGui import QWidget
+    from PySide.QtGui import QVBoxLayout
+    from PySide.QtGui import QGridLayout
+    from PySide.QtGui import QListWidget
+    from PySide.QtGui import QAbstractItemView
+    from PySide.QtGui import QListView
+    from PySide.QtGui import QPushButton
+    from PySide.QtGui import QHBoxLayout
+    from PySide.QtGui import QSpacerItem
+    from PySide.QtGui import QApplication
+    from PySide.QtGui import QMessageBox
+    from PySide.QtGui import QInputDialog
+    from PySide.QtGui import QLineEdit
     from shiboken import wrapInstance
 
 except ImportError:
     from PySide2 import QtGui, QtCore, QtWidgets
+    from PySide2.QtWidgets import QSizePolicy
+    from PySide2.QtWidgets import QGroupBox
+    from PySide2.QtWidgets import QWidget
+
+    from PySide2.QtWidgets import QVBoxLayout
+    from PySide2.QtWidgets import QGridLayout
+    from PySide2.QtWidgets import QListWidget
+    from PySide2.QtWidgets import QAbstractItemView
+    from PySide2.QtWidgets import QListView
+    from PySide2.QtWidgets import QPushButton
+    from PySide2.QtWidgets import QHBoxLayout
+    from PySide2.QtWidgets import QSpacerItem
+    from PySide2.QtWidgets import QApplication
+    from PySide2.QtWidgets import QMessageBox
+    from PySide2.QtWidgets import QInputDialog
+    from PySide2.QtWidgets import QLineEdit
+
+    QApplication.UnicodeUTF8 = 0
+
     from shiboken2 import wrapInstance
 
 except ImportError:
     from PyQt4 import QtGui
     from PyQt4 import QtCore
     import PyQt4.QtGui as QtWidgets
+    from PyQt4.QtGui import QSizePolicy
+    from PyQt4.QtGui import QGroupBox
+    from PyQt4.QtGui import QWidget
+    from PyQt4.QtGui import QVBoxLayout
+    from PyQt4.QtGui import QGridLayout
+    from PyQt4.QtGui import QListWidget
+    from PyQt4.QtGui import QAbstractItemView
+    from PyQt4.QtGui import QListView
+    from PyQt4.QtGui import QPushButton
+    from PyQt4.QtGui import QHBoxLayout
+    from PyQt4.QtGui import QSpacerItem
+    from PyQt4.QtGui import QApplication
+    from PyQt4.QtGui import QMessageBox
+    from PyQt4.QtGui import QInputDialog
+    from PyQt4.QtGui import QLineEdit
     from sip import wrapinstance as wrapInstance
 
 
@@ -29,83 +78,83 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(566, 568)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(Form.sizePolicy().hasHeightForWidth())
         Form.setSizePolicy(sizePolicy)
         Form.setMinimumSize(QtCore.QSize(560, 560))
-        self.editorGroupBox = QtGui.QGroupBox(Form)
+        self.editorGroupBox = QGroupBox(Form)
         self.editorGroupBox.setGeometry(QtCore.QRect(10, 10, 531, 535))
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.editorGroupBox.sizePolicy().hasHeightForWidth())
         self.editorGroupBox.setSizePolicy(sizePolicy)
         self.editorGroupBox.setObjectName("editorGroupBox")
-        self.layoutWidget = QtGui.QWidget(self.editorGroupBox)
+        self.layoutWidget = QWidget(self.editorGroupBox)
         self.layoutWidget.setGeometry(QtCore.QRect(10, 20, 511, 421))
         self.layoutWidget.setObjectName("layoutWidget")
-        self.gridLayout = QtGui.QGridLayout(self.layoutWidget)
+        self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
-        self.variable_verticalLayout_1 = QtGui.QVBoxLayout()
+        self.variable_verticalLayout_1 = QVBoxLayout()
         self.variable_verticalLayout_1.setObjectName("variable_verticalLayout_1")
-        self.listBox = QtGui.QListWidget(self.layoutWidget)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
+        self.listBox = QListWidget(self.layoutWidget)
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.listBox.sizePolicy().hasHeightForWidth())
         self.listBox.setSizePolicy(sizePolicy)
         self.listBox.setDragEnabled(True)
         self.listBox.setDragDropOverwriteMode(False)
-        self.listBox.setDragDropMode(QtGui.QAbstractItemView.InternalMove)
+        self.listBox.setDragDropMode(QAbstractItemView.InternalMove)
         self.listBox.setDefaultDropAction(QtCore.Qt.MoveAction)
         self.listBox.setAlternatingRowColors(True)
-        self.listBox.setSelectionMode(QtGui.QAbstractItemView.SingleSelection)
-        self.listBox.setMovement(QtGui.QListView.Snap)
-        self.listBox.setResizeMode(QtGui.QListView.Fixed)
+        self.listBox.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.listBox.setMovement(QListView.Snap)
+        self.listBox.setResizeMode(QListView.Fixed)
         self.listBox.setSelectionRectVisible(False)
         self.listBox.setObjectName("listBox")
         self.variable_verticalLayout_1.addWidget(self.listBox)
         self.gridLayout.addLayout(self.variable_verticalLayout_1, 0, 0, 1, 1)
-        self.variable_verticalLayout_2 = QtGui.QVBoxLayout()
+        self.variable_verticalLayout_2 = QVBoxLayout()
         self.variable_verticalLayout_2.setObjectName("variable_verticalLayout_2")
-        self.addButton = QtGui.QPushButton(self.layoutWidget)
+        self.addButton = QPushButton(self.layoutWidget)
         self.addButton.setObjectName("addButton")
         self.variable_verticalLayout_2.addWidget(self.addButton)
-        self.editButton = QtGui.QPushButton(self.layoutWidget)
+        self.editButton = QPushButton(self.layoutWidget)
         self.editButton.setObjectName("editButton")
         self.variable_verticalLayout_2.addWidget(self.editButton)
-        self.removeButton = QtGui.QPushButton(self.layoutWidget)
+        self.removeButton = QPushButton(self.layoutWidget)
         self.removeButton.setObjectName("removeButton")
         self.variable_verticalLayout_2.addWidget(self.removeButton)
-        spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        spacerItem = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
         self.variable_verticalLayout_2.addItem(spacerItem)
-        self.upButton = QtGui.QPushButton(self.layoutWidget)
+        self.upButton = QPushButton(self.layoutWidget)
         self.upButton.setObjectName("upButton")
         self.variable_verticalLayout_2.addWidget(self.upButton)
-        self.downButton = QtGui.QPushButton(self.layoutWidget)
+        self.downButton = QPushButton(self.layoutWidget)
         self.downButton.setObjectName("downButton")
         self.variable_verticalLayout_2.addWidget(self.downButton)
-        spacerItem1 = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        spacerItem1 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
         self.variable_verticalLayout_2.addItem(spacerItem1)
         self.variable_verticalLayout_2.setStretch(3, 1)
         self.variable_verticalLayout_2.setStretch(6, 1)
         self.gridLayout.addLayout(self.variable_verticalLayout_2, 0, 1, 1, 1)
         self.gridLayout.setColumnStretch(0, 1)
-        self.horizontalLayoutWidget = QtGui.QWidget(self.editorGroupBox)
+        self.horizontalLayoutWidget = QWidget(self.editorGroupBox)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 444, 511, 61))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout = QtGui.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout = QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem2 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        spacerItem2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem2)
-        self.ok_pushButton = QtGui.QPushButton(self.horizontalLayoutWidget)
+        self.ok_pushButton = QPushButton(self.horizontalLayoutWidget)
         self.ok_pushButton.setObjectName("ok_pushButton")
         self.horizontalLayout.addWidget(self.ok_pushButton)
-        self.cancel_pushButton = QtGui.QPushButton(self.horizontalLayoutWidget)
+        self.cancel_pushButton = QPushButton(self.horizontalLayoutWidget)
         self.cancel_pushButton.setObjectName("cancel_pushButton")
         self.horizontalLayout.addWidget(self.cancel_pushButton)
         self.horizontalLayout.setStretch(0, 1)
@@ -114,15 +163,15 @@ class Ui_Form(object):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QtGui.QApplication.translate("Form", "Form", None, QtGui.QApplication.UnicodeUTF8))
-        self.editorGroupBox.setTitle(QtGui.QApplication.translate("Form", "Maya Module Path Editor", None, QtGui.QApplication.UnicodeUTF8))
-        self.addButton.setText(QtGui.QApplication.translate("Form", "<<", None, QtGui.QApplication.UnicodeUTF8))
-        self.editButton.setText(QtGui.QApplication.translate("Form", "Edit", None, QtGui.QApplication.UnicodeUTF8))
-        self.removeButton.setText(QtGui.QApplication.translate("Form", ">>", None, QtGui.QApplication.UnicodeUTF8))
-        self.upButton.setText(QtGui.QApplication.translate("Form", "Move Up", None, QtGui.QApplication.UnicodeUTF8))
-        self.downButton.setText(QtGui.QApplication.translate("Form", "Move Down", None, QtGui.QApplication.UnicodeUTF8))
-        self.ok_pushButton.setText(QtGui.QApplication.translate("Form", "Save", None, QtGui.QApplication.UnicodeUTF8))
-        self.cancel_pushButton.setText(QtGui.QApplication.translate("Form", "Close", None, QtGui.QApplication.UnicodeUTF8))
+        Form.setWindowTitle(QApplication.translate("Form", "Form", None, QApplication.UnicodeUTF8))
+        self.editorGroupBox.setTitle(QApplication.translate("Form", "Maya Module Path Editor", None, QApplication.UnicodeUTF8))
+        self.addButton.setText(QApplication.translate("Form", "<<", None, QApplication.UnicodeUTF8))
+        self.editButton.setText(QApplication.translate("Form", "Edit", None, QApplication.UnicodeUTF8))
+        self.removeButton.setText(QApplication.translate("Form", ">>", None, QApplication.UnicodeUTF8))
+        self.upButton.setText(QApplication.translate("Form", "Move Up", None, QApplication.UnicodeUTF8))
+        self.downButton.setText(QApplication.translate("Form", "Move Down", None, QApplication.UnicodeUTF8))
+        self.ok_pushButton.setText(QApplication.translate("Form", "Save", None, QApplication.UnicodeUTF8))
+        self.cancel_pushButton.setText(QApplication.translate("Form", "Close", None, QApplication.UnicodeUTF8))
 
 
 class StringListEditor(QtWidgets.QDialog, Ui_Form):
@@ -186,12 +235,12 @@ class StringListEditor(QtWidgets.QDialog, Ui_Form):
 
     def addString(self, *args):
 
-        dlg = QtGui.QInputDialog()
-        dlg.setInputMode(QtGui.QInputDialog.TextInput)
+        dlg = QInputDialog()
+        dlg.setInputMode(QInputDialog.TextInput)
         txt, ok = dlg.getText(self, self.addCaption, self.addLabel)  # ,
         txt = txt.rstrip('\\')
         txt = txt.rstrip('/')
-        # QtGui.QLineEdit.Normal, self.listBox.currentItem().text())
+        # QLineEdit.Normal, self.listBox.currentItem().text())
 
         if ok and (txt is not None):
             # if (not self.duplicatesOk and self.listBox.findItem(txt, CaseSensitive | ExactMatch)):
@@ -208,8 +257,8 @@ class StringListEditor(QtWidgets.QDialog, Ui_Form):
         original = currentItem.text()
 
         if original is not None:
-            txt, ok = QtGui.QInputDialog.getText(self, self.editCaption, self.editLabel,
-                                                 QtGui.QLineEdit.Normal, original)
+            txt, ok = QInputDialog.getText(self, self.editCaption, self.editLabel,
+                                                 QLineEdit.Normal, original)
 
             if ok and (txt is not None):
                 # if (not self.duplicatesOk and self.listBox.findItem(txt, CaseSensitive | ExactMatch)):
@@ -234,13 +283,13 @@ class StringListEditor(QtWidgets.QDialog, Ui_Form):
         self.updateButtons()
 
     def confirmToRemove(self, txt):
-        question = QtGui.QMessageBox.question(
+        question = QMessageBox.question(
             self, "Remove",
             "Remove '{0}'?".format(txt),
-            QtGui.QMessageBox.Yes | QtGui.QMessageBox.Default,
-            QtGui.QMessageBox.No)
+            QMessageBox.Yes | QMessageBox.Default,
+            QMessageBox.No)
 
-        return question == QtGui.QMessageBox.Yes
+        return question == QMessageBox.Yes
 
     def moveUp(self, *args):
         currentItem = self.listBox.currentItem()
@@ -294,8 +343,8 @@ class EnvironmentVariableEditorTab(StringListEditor):
         list = self.load_variable_value()
         super(EnvironmentVariableEditorTab, self).__init__(parent, list=list)
         self.editorGroupBox.setTitle(
-            QtGui.QApplication.translate(
-                "Form", "Edit environment variable '{0}'".format(envvarkey), None, QtGui.QApplication.UnicodeUTF8))
+            QApplication.translate(
+                "Form", "Edit environment variable '{0}'".format(envvarkey), None, QApplication.UnicodeUTF8))
 
     def load_variable_value(self):
 
@@ -346,10 +395,10 @@ class EnvironmentVariableEditorTab(StringListEditor):
                 res = re.sub(pat, repl, body)
                 f.write(res)
 
-                QtGui.QMessageBox.question(
+                QMessageBox.question(
                     self, "Save succece",
                     "save file at '{0}'.".format(self.envvarpath),
-                    QtGui.QMessageBox.Ok | QtGui.QMessageBox.Default)
+                    QMessageBox.Ok | QMessageBox.Default)
 
             except Exception as e:
                 f.write(body)
@@ -366,6 +415,7 @@ class EnvironmentVariableEditorTab(StringListEditor):
 
 class MayaEnvEditor(QtWidgets.QDialog):
     valueChanged = QtCore.Signal(int)
+
     TITLE = "Edit environment variable"
 
     def __init__(self, parent=None):
@@ -390,10 +440,10 @@ class MayaEnvEditor(QtWidgets.QDialog):
             ud = '/'.join(usd.split('/')[0:-3])
             p = os.path.join(ud, 'Maya.env')
             if not os.path.exists(p):
-                QtGui.QMessageBox.question(
+                QMessageBox.question(
                     self, "Error",
                     "Maya.env is not detected (at: {0}), check your installation or call your system administrator.".format(p),
-                    QtGui.QMessageBox.Ok | QtGui.QMessageBox.Default)
+                    QMessageBox.Ok | QMessageBox.Default)
                 raise "Maya.env is not detected"
 
         return p
