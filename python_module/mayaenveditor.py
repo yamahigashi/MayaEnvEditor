@@ -252,11 +252,15 @@ class StringListEditor(QtWidgets.QDialog, Ui_Form):
 
     def editString(self, *args):
         currentItem = self.listBox.currentItem()
+        if not currentItem:
+            self.addString()
+            return
+
         original = currentItem.text()
 
         if original is not None:
-            txt, ok = QInputDialog.getText(self, self.editCaption, self.editLabel,
-                                                 QLineEdit.Normal, original)
+            txt, ok = QInputDialog.getText(
+                self, self.editCaption, self.editLabel, QLineEdit.Normal, original)
 
             if ok and (txt is not None):
                 # if (not self.duplicatesOk and self.listBox.findItem(txt, CaseSensitive | ExactMatch)):
@@ -265,11 +269,11 @@ class StringListEditor(QtWidgets.QDialog, Ui_Form):
                 self.refreshList()
                 self.updateButtons()
 
-            else:
-                self.addString()
-
     def removeString(self, *args):
         currentItem = self.listBox.currentItem()
+        if not currentItem:
+            return
+
         original = currentItem.text()
 
         if original is not None and (self.ask and not self.confirmToRemove(original)):
