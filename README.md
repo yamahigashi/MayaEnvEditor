@@ -7,7 +7,7 @@ When activated, a tab is created according to the key name described in maya.env
 and the value of the environment variable corresponding to the key name is edited
 in that tab.
 
-![sample image](https://raw.githubusercontent.com/yamahigashi/MayaEnvEditor/master/sample.png)
+![sample image](https://github.com/yamahigashi/MayaEnvEditor/blob/master/sample.png)
 
 Usage:
 ======
