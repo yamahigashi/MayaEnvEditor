@@ -364,7 +364,7 @@ class EnvironmentVariableEditorTab(StringListEditor):
 
     def create_connections(self, parent):
         self.cancel_pushButton.clicked.connect(parent.cancel)
-        self.ok_pushButton.clicked.connect(self.save)
+        self.ok_pushButton.clicked.connect(parent.save_all_tabs)
 
         self.addButton.clicked.connect(partial(self.addString, self.listBox))
         self.removeButton.clicked.connect(partial(self.removeString, self.listBox))
@@ -396,11 +396,6 @@ class EnvironmentVariableEditorTab(StringListEditor):
                 repl = "{0}={1}".format(self.envvarkey, var)
                 res = re.sub(pat, repl, body)
                 f.write(res)
-
-                QMessageBox.question(
-                    self, "Save succece",
-                    "save file at '{0}'.".format(self.envvarpath),
-                    QMessageBox.Ok | QMessageBox.Default)
 
             except Exception as e:
                 f.write(body)
@@ -467,7 +462,6 @@ class MayaEnvEditor(QtWidgets.QDialog):
             tab = EnvironmentVariableEditorTab(envvarpath=self.envvarpath, envvarkey=key)
             self.tabWidgets.append(tab)
             self.tabs.insertTab(index, tab, self.generate_tab_label(key))
-            self.tabWidgets.append(tab)
             tab.create_connections(self)
 
             return tab
@@ -482,6 +476,32 @@ class MayaEnvEditor(QtWidgets.QDialog):
             k, v = entry[0], entry[1]
             if "MAYA_MODULE_PATH" not in k:
                 __inner(i + 1, k)
+
+    def save_all_tabs(self):
+        status = True
+        mes = ""
+        for tab in self.tabWidgets:
+            try:
+                tab.save()
+
+            except Exception as e:
+                import traceback
+                status = False
+                mes += traceback.format_exc()
+                mes += e
+                mes += "\n"
+
+        if not status:
+            print mes
+            QMessageBox.question(
+                self, "!!!! Save failed  !!!!!!",
+                "file at '{0}'.\nsee error message in script editor.".format(self.envvarpath),
+                QMessageBox.Ok | QMessageBox.Default)
+        else:
+            QMessageBox.question(
+                self, "Save done",
+                "save file at '{0}'.".format(self.envvarpath),
+                QMessageBox.Ok | QMessageBox.Default)
 
     def setup_window(self):
         self.setObjectName(self.toolName)
