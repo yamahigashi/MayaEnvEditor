@@ -52,7 +52,6 @@ except ImportError:
     from shiboken2 import wrapInstance
 
 except ImportError:
-    from PyQt4 import QtGui
     from PyQt4 import QtCore
     import PyQt4.QtGui as QtWidgets
     from PyQt4.QtGui import QSizePolicy
@@ -82,7 +81,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(Form.sizePolicy().hasHeightForWidth())
         Form.setSizePolicy(sizePolicy)
-        Form.setMinimumSize(QtCore.QSize(560, 560))
+        Form.setMinimumSize(QtCore.QSize(0, 0))
         self.gridLayout_2 = QGridLayout(Form)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.editorGroupBox = QGroupBox(Form)
@@ -91,7 +90,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.editorGroupBox.sizePolicy().hasHeightForWidth())
         self.editorGroupBox.setSizePolicy(sizePolicy)
-        self.editorGroupBox.setMinimumSize(QtCore.QSize(560, 560))
+        self.editorGroupBox.setMinimumSize(QtCore.QSize(0, 0))
         self.editorGroupBox.setObjectName("editorGroupBox")
         self.gridLayout_3 = QGridLayout(self.editorGroupBox)
         self.gridLayout_3.setObjectName("gridLayout_3")
@@ -144,6 +143,7 @@ class Ui_Form(object):
         self.gridLayout.setColumnStretch(0, 1)
         self.gridLayout_3.addLayout(self.gridLayout, 0, 0, 1, 1)
         self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setContentsMargins(15, 15, 15, 15)
         self.horizontalLayout.setObjectName("horizontalLayout")
         spacerItem2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem2)
