@@ -6,7 +6,7 @@ import maya.mel as mel
 import maya.cmds as cmds
 
 
-import mayaenveditor as editor
+import mayaenveditor
 
 
 def create_menu():
@@ -33,7 +33,7 @@ def create_menu():
     mel.eval(cmd)
 
     cmds.menuItem(divider=True)
-    cmds.menuItem(label="Edit Maya.env", command=partial(editor.run))
+    cmds.menuItem(label="Edit Maya.env", command=partial(mayaenveditor.run))
 
 
 def later():
