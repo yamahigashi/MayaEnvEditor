@@ -409,7 +409,7 @@ class EnvironmentVariableEditorTab(StringListEditor):
                 raise e
 
         os.environ[self.envvarkey] = var
-        if "MAYA_MODULE_PATH" in self.envvarkey:
+        if "MAYA_MODULE_PATH" in self.envvarkey and hasattr(cmds, "loadModule"):
             # CAUTION: this does not mean that environment variables in the
             #   module definition file are not re-evaluated
             cmds.loadModule(allModules=True)
