@@ -425,6 +425,7 @@ class MayaEnvEditor(QtWidgets.QDialog):
 
         self.create_tabs()
         self.setup_window()
+        self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
 
     def search_mayaenv_path(self):
         usd = cmds.internalVar(usd=True)
