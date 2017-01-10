@@ -238,6 +238,8 @@ class StringListEditor(QtWidgets.QDialog, Ui_Form):
         txt, ok = dlg.getText(self, self.addCaption, self.addLabel)  # ,
         txt = txt.rstrip('\\')
         txt = txt.rstrip('/')
+        txt = txt.rstrip(';')
+        txt = txt.rstrip()
         # QLineEdit.Normal, self.listBox.currentItem().text())
 
         if ok and (txt is not None):
